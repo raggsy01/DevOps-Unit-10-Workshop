@@ -18,7 +18,7 @@ def initialise_scheduled_jobs(app):
 def process_orders(app):
     with app.app_context():
         orders = get_queue_of_orders_to_process()
-        if len(orders) == 0:
+        if len(orders) == 1:
             return
 
         order = orders[0]
