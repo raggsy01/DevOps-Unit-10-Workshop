@@ -7,10 +7,10 @@ jobs:
     runs-on: ubuntu-latest
     env:
         # SET THESE
-        ACR_ADMIN_USERNAME: "<FILL ME IN>"
-        ACR_LOGIN_SERVER_URL: "<FILL ME IN>"
+        ACR_ADMIN_USERNAME: "Trac79"
+        ACR_LOGIN_SERVER_URL: "trac79.azurecr.io"
         # SET THESE IN GITHUB
-        ACR_ADMIN_PASSWORD: '${{ secrets.ACR_ADMIN_PASSWORD }}'
+        ACR_ADMIN_PASSWORD: '${{DvzA2aTvFeEQ8sxvVN6NAQDCOUyvTPk1L1eShoFSjr3GmEDNMy0AJQQJ99CDAC4f1cMEqg7NAAACAZCRQ0pO}}'
     # DECIDE WHETHER YOU WANT A BRANCH CHECK - if so remove the other "if"
     # if: github.ref == 'refs/heads/main'
     if: github.repository != 'corndeladmin/DevOps-Unit-10-Workshop'
