@@ -70,7 +70,7 @@ def set_scenario():
         clear_orders()
 
     response = requests.post(
-        app.config["https://trresources-order-processing-app.azurewebsites.net"] + "/scenario",
+        app.config["FINANCE-PACKAGE_URL"] + "/scenario",
         json=scenario
     )
     response.raise_for_status()
