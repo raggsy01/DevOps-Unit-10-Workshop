@@ -35,7 +35,7 @@ def process_orders(app):
         )
 
         response.raise_for_status()
-            app.logger.info("Response from endpoint: " + response.text)
+        app.logger.info("Response from endpoint: " + response.text)
 
         order.set_as_processed()
         save_order(order)
