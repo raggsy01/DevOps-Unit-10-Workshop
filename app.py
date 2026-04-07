@@ -70,7 +70,7 @@ def set_scenario():
         clear_orders()
 
     response = requests.post(
-        app.config["FINANCE-PACKAGE_URL"] + "/scenario",
+        app.config["FINANCE_PACKAGE_URL"] + "/scenario",
         json=scenario
     )
     response.raise_for_status()
