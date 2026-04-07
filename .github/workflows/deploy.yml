@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
         # SET THESE
-        ACR_ADMIN_USERNAME: "Trac79"
+        ACR_ADMIN_USERNAME: "trac79"
         ACR_LOGIN_SERVER_URL: "trac79.azurecr.io"
         # SET THESE IN GITHUB
         ACR_ADMIN_PASSWORD: '${{DvzA2aTvFeEQ8sxvVN6NAQDCOUyvTPk1L1eShoFSjr3GmEDNMy0AJQQJ99CDAC4f1cMEqg7NAAACAZCRQ0pO}}'
