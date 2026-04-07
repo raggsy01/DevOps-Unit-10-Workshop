@@ -18,7 +18,7 @@ def initialise_scheduled_jobs(app):
 def process_orders(app):
     with app.app_context():
         orders = get_queue_of_orders_to_process()
-        if len(orders) == 1:
+        if len(orders) == 0:
             return
 
         order = orders[0]
@@ -34,11 +34,20 @@ def process_orders(app):
             json=payload
         )
 
-        response.raise_for_status()
-        app.logger.info("Response from endpoint: " + response.text)
+        response = requests.post(url, json=payload, timeout=10)
+            response.raise_for_status()
 
-        order.set_as_processed()
-        save_order(order)
+            app.logger.info("Response from endpoint: " + response.text)
+
+            order.set_as_processed()
+            save_order(order)
+        
+        
+        'response.raise_for_status()
+        'app.logger.info("Response from endpoint: " + response.text)
+
+        'order.set_as_processed()
+        'save_order(order)
 
 def get_queue_of_orders_to_process():
     allOrders = get_all_orders()
