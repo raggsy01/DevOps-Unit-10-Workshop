@@ -34,20 +34,13 @@ def process_orders(app):
             json=payload
         )
 
-        response = requests.post(url, json=payload, timeout=10)
-            response.raise_for_status()
-
-            app.logger.info("Response from endpoint: " + response.text)
-
-            order.set_as_processed()
-            save_order(order)
         
         
-        'response.raise_for_status()
-        'app.logger.info("Response from endpoint: " + response.text)
+        response.raise_for_status()
+        app.logger.info("Response from endpoint: " + response.text)
 
-        'order.set_as_processed()
-        'save_order(order)
+        order.set_as_processed()
+        save_order(order)
 
 def get_queue_of_orders_to_process():
     allOrders = get_all_orders()
