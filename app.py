@@ -9,14 +9,13 @@ from products import create_product_download
 import requests
 import logging
 
-logging.basicConfig(level=logging.INFO)
-
 app = Flask(__name__)
 app.config.from_object(Config)
 
 initialise_database(app)
 initialise_scheduled_jobs(app)
 
+logging.basicConfig(level=logging.INFO)
 
 @app.route("/")
 def index():
